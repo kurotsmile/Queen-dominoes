@@ -92,6 +92,7 @@ public class Game_Handle : MonoBehaviour
 
     private void act_play()
     {
+        this.carrot.ads.Destroy_Banner_Ad();
         this.carrot.ads.show_ads_Interstitial();
         this.carrot.play_sound_click();
         this.panel_home.SetActive(false);
@@ -107,7 +108,6 @@ public class Game_Handle : MonoBehaviour
 
     public void btn_play_two_play()
     {
-        this.carrot.ads.Destroy_Banner_Ad();
         this.domino_manager.set_model_play(true);
         this.act_play();
     }
@@ -145,7 +145,7 @@ public class Game_Handle : MonoBehaviour
 
     public void btn_back_home()
     {
-        if (this.domino_manager.get_status_model_two_play()) this.carrot.ads.create_banner_ads();
+        this.carrot.ads.create_banner_ads();
         this.carrot.ads.show_ads_Interstitial();
         this.carrot.play_sound_click();
         this.panel_home.SetActive(true);
